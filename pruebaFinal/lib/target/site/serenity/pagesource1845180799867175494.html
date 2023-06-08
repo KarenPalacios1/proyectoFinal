@@ -1,0 +1,294 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="es"&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;meta name="generator" content="GeneXus Java 10_2_5-90830"&gt;<br/>
+  &lt;meta name="description" content="Login"&gt;&lt;!--[if IE]&gt;&lt;meta http-equiv="page-enter" content="blendTrans(Duration=0.1)"/&gt;&lt;![endif]--&gt;<br/>
+  &lt;meta name="fragment" content="!"&gt;<br/>
+  &lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;<br/>
+  &lt;title&gt;Login&lt;/title&gt;<br/>
+  &lt;link id="gxtheme_css_reference" rel="stylesheet" type="text/css" href="/VUCE/static/Resources/Spanish/AVUCE.css?1714331"&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/external/js/jquery-1.12.4.min.js?20232141445497"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/external/js/bootstrap.min.js?20232141445497"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/external/js/alertify.js?20232141445497"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/gxtimezone.js?90830"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/gxgral.js?90830"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/gxcfg.js?202321414454355"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;$(document).ready(function () {<br/>
+var urlref = "https://test-eid.portal.gub.uy/v1.1/idp/profile/SAML2/Redirect/SSO";<br/>
+if(document.referrer == urlref){<br/>
+			url = "loginvuce";<br/>
+			window.top.location.href =  url;}<br/>
+});<br/>
+&lt;/script&gt;<br/>
+  &lt;link href="../static/external/css/alertify.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="../static/external/css/alertify_default.css" rel="stylesheet"&gt;<br/>
+  &lt;script&gt;<br/>
+ if(!alertify.SoloAceptar){<br/>
+  alertify.dialog('SoloAceptar',function factory(){<br/>
+   return{<br/>
+    main:function(message){<br/>
+     this.message = message;<br/>
+    },<br/>
+    setup:function(){<br/>
+     return {<br/>
+      buttons:[{text: "Aceptar", key:27/*Esc*/}],<br/>
+      focus: { element:0 }<br/>
+     };<br/>
+    },<br/>
+    prepare:function(){<br/>
+     this.setContent(this.message);<br/>
+    }<br/>
+   }<br/>
+  });<br/>
+ }<br/>
+&lt;/script&gt;<br/>
+  &lt;link id="gxtheme_css_reference" rel="stylesheet" type="text/css" href="../static/Resources/Spanish/AVUCE.css"&gt;<br/>
+  &lt;link href="../static/external/css/bootstrap.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="../static/external/css/icon-vuce.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="../static/external/css/fileinput.min.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="../static/external/css/datepicker.css" rel="stylesheet"&gt;<br/>
+  &lt;link href="../static/external/css/bootstrap-vuce_LOGIN.css" rel="stylesheet"&gt;<br/>
+  &lt;link rel="apple-touch-icon-precomposed" href="../static/external/apple-touch-icon-precomposed.png"&gt;<br/>
+  &lt;link rel="apple-touch-icon-precomposed" sizes="76x76" href="../static/external/apple-touch-icon-precomposed-76x76.png"&gt;<br/>
+  &lt;link rel="apple-touch-icon-precomposed" sizes="120x120" href="../static/external/apple-touch-icon-precomposed-120x120.png"&gt;<br/>
+  &lt;link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/external/apple-touch-icon-precomposed-152x152.png"&gt;<br/>
+  &lt;link rel="icon" sizes="196x196" href="../static/external/icon-precomposed-196x196.png"&gt;<br/>
+  &lt;link rel="icon" sizes="196x196" href="../static/external/icon-precomposed-128x128.png"&gt;<br/>
+  &lt;link rel="shortcut icon" href="/VUCE/static/Resources/favicon.png"&gt;<br/>
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br/>
+  &lt;style&gt;<br/>
+.iframeclass{<br/>
+width:50px !important;<br/>
+}<br/>
+.alertify .ajs-dialog {<br/>
+	max-width: 600px;<br/>
+}<br/>
+@font-face {<br/>
+  font-family: 'Avenir-Roman';<br/>
+  src: url('fonts/Avenir-Roman.eot?#iefix') format('embedded-opentype'), url('fonts/Avenir-Roman.woff') format('woff'), url('fonts/Avenir-Roman.ttf') format('truetype'), url('fonts/Avenir-Roman.svg#Avenir-Roman') format('svg');<br/>
+  font-weight: normal;<br/>
+  font-style: normal;<br/>
+}<br/>
+html { <br/>
+	background: url("../static/external/img/back1.jpg") no-repeat center center fixed; <br/>
+	-webkit-background-size: cover;<br/>
+	-moz-background-size: cover;<br/>
+	-o-background-size: cover;<br/>
+	background-size: cover;<br/>
+}<br/>
+.form-control {<br/>
+	width: 90%;<br/>
+	height: 31px;<br/>
+	padding: 5px 7px 5px 15px;<br/>
+	background: #fff;<br/>
+	color: #666;<br/>
+	border: 1px solid transparent;<br/>
+	-moz-border-radius: 4px;<br/>
+	-webkit-border-radius: 4px;<br/>
+	border-radius: 0px;<br/>
+}<br/>
+.log-btn {<br/>
+  background: #0AC986;<br/>
+  display: inline-block;<br/>
+  width: 90%;<br/>
+  font-size: 16px;<br/>
+  font-weight: normal;<br/>
+  height: 50px;<br/>
+  color: #fff;<br/>
+  text-decoration: none;<br/>
+  border: none;<br/>
+  -moz-border-radius: 4px;<br/>
+  -webkit-border-radius: 4px;<br/>
+  border-radius: 4px;<br/>
+}<br/>
+.log-btn:hover {<br/>
+  background: #119869;<br/>
+}<br/>
+.id-log-btn {<br/>
+  background: rgb(0, 105, 217);<br/>
+  display: inline-block;<br/>
+  width: 90%;<br/>
+  font-size: 16px;<br/>
+  font-weight: normal;<br/>
+  height: 50px;<br/>
+  color: #fff;<br/>
+  text-decoration: none;<br/>
+  border: none;<br/>
+  -moz-border-radius: 4px;<br/>
+  -webkit-border-radius: 4px;<br/>
+  border-radius: 4px;<br/>
+}<br/>
+.id-log-btn:hover {<br/>
+  background: #1158a5;<br/>
+}<br/>
+.login-form {<br/>
+	width: 450px;<br/>
+	background: #D1D1D1;<br/>
+	-moz-border-radius: 4px;<br/>
+	-webkit-border-radius: 4px;<br/>
+	border-radius: 4px;<br/>
+	margin: auto;<br/>
+	position: absolute;<br/>
+	left: 0;<br/>
+	right: 0;<br/>
+	top: 50%;<br/>
+	-moz-transform: translateY(-50%);<br/>
+	-ms-transform: translateY(-50%);<br/>
+	-webkit-transform: translateY(-50%);<br/>
+	transform: translateY(-50%);<br/>
+}<br/>
+.link {<br/>
+	display: inline-block;<br/>
+	text-decoration: none;<br/>
+	color: #C6C6C6;<br/>
+	float: right;<br/>
+	font-size: 12px;<br/>
+	margin-bottom: 15px;<br/>
+}<br/>
+.link:hover {<br/>
+	text-decoration: underline;<br/>
+	color: #8C918F;<br/>
+}<br/>
+.link:visited {<br/>
+	color: #8C918F !important;<br/>
+}<br/>
+&lt;/style&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body class="(none)" style="opacity: 1; background-color: transparent;" onkeyup="gx.evt.onkeyup(event)" onkeypress="gx.evt.onkeypress(event,false,false)" onkeydown="gx.evt.onkeypress(null,false,false)"&gt;<br/>
+  &lt;form id="MAINFORM" onsubmit="try{return gx.csv.validForm()}catch(e){return true;}" name="MAINFORM" method="post" class="(none)" novalidate action="loginvuce"&gt;<br/>
+   &lt;p&gt;&lt;/p&gt;<br/>
+   &lt;div style="display: none;"&gt;&lt;input type="text" id="PreventChromeAutocomplete" name="PreventChromeAutocomplete" autocomplete="address-level4"&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="container"&gt;<br/>
+    &lt;div class="row"&gt;<br/>
+     &lt;div class="login-form" ;=""&gt;<br/>
+      &lt;div class="col-sm-12"&gt;<br/>
+       &lt;div style="width:100%;margin:0px auto;text-align:center;"&gt;<br/>
+        &lt;h1&gt;&lt;img src="/VUCE/static/Resources/Vuce_logotipo_login.png" id="IMAGE1" alt=" " class="Image" style=";width: 225px;height: 72px"&gt;&lt;img src="/VUCE/static/Resources/MSP_LOGOTIPO_2020_HORIZONTAL.png" id="IMAGE2" alt=" " class="Image" style=";display:none;;width: 289px;height: 126px"&gt;&lt;/h1&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;p&gt;&lt;/p&gt;<br/>
+       &lt;div id="K2BSECTION_ERRORVIEWERCONTAINERDELETE" class="Section" style=""&gt;<br/>
+        &lt;div id="SECTION1" class="Section" style=""&gt;<br/>
+         &lt;div&gt;<br/>
+          &lt;span class="ErrorViewer gx_ev ErrorViewerBullet" id="gxErrorViewer"&gt;&lt;/span&gt;<br/>
+         &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+       &lt;/div&gt;<br/>
+       &lt;p&gt;&lt;/p&gt;<br/>
+       &lt;table id="TABLE1" class="Table" data-cellpadding="0" data-cellspacing="0" style=" width: 100%;" cellpadding="0" cellspacing="0"&gt;<br/>
+        &lt;tbody&gt;<br/>
+         &lt;tr&gt;<br/>
+          &lt;td data-align="center" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"&gt;<br/>
+           &lt;div class="tab-content" style="padding-left: 0px; padding-right: 0px;"&gt;<br/>
+            &lt;div id="loginvuce" class="tab-pane fade in active"&gt;<br/>
+             &lt;div class="gxwebcomponent" id="gxHTMLWrpW0018" style="width: 100%;"&gt;<br/>
+              &lt;div&gt;<br/>
+               &lt;span class=" gx_ev ErrorViewerBullet" id="W0018gxErrorViewer"&gt;&lt;/span&gt;<br/>
+              &lt;/div&gt;<br/>
+              &lt;table id="W0018CONTENEDORLOGIN" class="Table" data-cellpadding="1" data-cellspacing="2" style=" width: 100%;" cellpadding="1" cellspacing="2"&gt;<br/>
+               &lt;tbody&gt;<br/>
+                &lt;tr&gt;<br/>
+                 &lt;td&gt;<br/>
+                  &lt;div id="loginvucetop" style="padding-left: 15px; padding-right: 15px;"&gt;<br/>
+                   &lt;table id="W0018TABLE1" class="Table" data-cellpadding="0" data-cellspacing="0" style=" width: 100%;" cellpadding="0" cellspacing="0"&gt;<br/>
+                    &lt;tbody&gt;<br/>
+                     &lt;tr&gt;<br/>
+                      &lt;td data-align="center" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"&gt;&lt;p&gt;&lt;select id="W0018vPAIS" name="W0018vPAIS" class="form-control" style=";width: 60chr" onfocus="gx.evt.onfocus(this, 9,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(9);" gxoch0="if(gx.evt.jsEvent(this)) {gx.evt.execEvt('W0018EVPAIS.CLICK.',this);} else return false;"&gt; &lt;option value="004"&gt;AFGANISTAN&lt;/option&gt;&lt;option value="248"&gt;ÅLAND ISLANDS&lt;/option&gt;&lt;option value="008"&gt;ALBANIA&lt;/option&gt;&lt;option value="276"&gt;ALEMANIA&lt;/option&gt;&lt;option value="016"&gt;AMERICAN SAMOA&lt;/option&gt;&lt;option value="020"&gt;ANDORRA&lt;/option&gt;&lt;option value="024"&gt;ANGOLA&lt;/option&gt;&lt;option value="660"&gt;ANGUILLA&lt;/option&gt;&lt;option value="010"&gt;ANTARCTICA&lt;/option&gt;&lt;option value="028"&gt;ANTIGUA Y BARBUDA&lt;/option&gt;&lt;option value="530"&gt;ANTILLAS HOLANDESAS&lt;/option&gt;&lt;option value="682"&gt;ARABIA SAUDITA&lt;/option&gt;&lt;option value="012"&gt;ARGELIA&lt;/option&gt;&lt;option value="032"&gt;ARGENTINA&lt;/option&gt;&lt;option value="051"&gt;ARMENIA&lt;/option&gt;&lt;option value="533"&gt;ARUBA&lt;/option&gt;&lt;option value="036"&gt;AUSTRALIA&lt;/option&gt;&lt;option value="040"&gt;AUSTRIA&lt;/option&gt;&lt;option value="031"&gt;AZERBAIJAN&lt;/option&gt;&lt;option value="044"&gt;BAHAMAS, ISLAS&lt;/option&gt;&lt;option value="048"&gt;BAHREIN&lt;/option&gt;&lt;option value="050"&gt;BANGLADESH&lt;/option&gt;&lt;option value="052"&gt;BARBADOS&lt;/option&gt;&lt;option value="112"&gt;BELARUS&lt;/option&gt;&lt;option value="056"&gt;BELGICA&lt;/option&gt;&lt;option value="084"&gt;BELICE&lt;/option&gt;&lt;option value="204"&gt;BENIN&lt;/option&gt;&lt;option value="060"&gt;BERMUDAS&lt;/option&gt;&lt;option value="068"&gt;BOLIVIA&lt;/option&gt;&lt;option value="535"&gt;BONAIRE, SINT EUSTATIUS AND SABA&lt;/option&gt;&lt;option value="070"&gt;BOSNIA AND HERZEGOVINA&lt;/option&gt;&lt;option value="072"&gt;BOTSWANA&lt;/option&gt;&lt;option value="074"&gt;BOUVET ISLAND&lt;/option&gt;&lt;option value="076"&gt;BRASIL&lt;/option&gt;&lt;option value="086"&gt;BRITISH INDIAN OCEAN TERRITORY&lt;/option&gt;&lt;option value="096"&gt;BRUNEI&lt;/option&gt;&lt;option value="100"&gt;BULGARIA&lt;/option&gt;&lt;option value="854"&gt;BURKINA FASO&lt;/option&gt;&lt;option value="108"&gt;BURUNDI&lt;/option&gt;&lt;option value="064"&gt;BUTAN&lt;/option&gt;&lt;option value="132"&gt;CABO VERDE&lt;/option&gt;&lt;option value="136"&gt;CAIMAN, ISLAS&lt;/option&gt;&lt;option value="116"&gt;CAMBODIA&lt;/option&gt;&lt;option value="120"&gt;CAMERUN&lt;/option&gt;&lt;option value="124"&gt;CANADA&lt;/option&gt;&lt;option value="140"&gt;CENTRAL AFRICAN REPUBLIC&lt;/option&gt;&lt;option value="148"&gt;CHAD&lt;/option&gt;&lt;option value="152"&gt;CHILE&lt;/option&gt;&lt;option value="156"&gt;CHINA, REPUBLICA POPULAR DE&lt;/option&gt;&lt;option value="196"&gt;CHIPRE&lt;/option&gt;&lt;option value="162"&gt;CHRISTMAS ISLAND&lt;/option&gt;&lt;option value="166"&gt;COCOS (KEELING), ISLAS&lt;/option&gt;&lt;option value="170"&gt;COLOMBIA&lt;/option&gt;&lt;option value="174"&gt;COMORAS&lt;/option&gt;&lt;option value="178"&gt;CONGO&lt;/option&gt;&lt;option value="184"&gt;COOK, ISLAS&lt;/option&gt;&lt;option value="408"&gt;COREA (NORTE)&lt;/option&gt;&lt;option value="410"&gt;COREA (SUR)&lt;/option&gt;&lt;option value="384"&gt;COSTA DE MARFIL&lt;/option&gt;&lt;option value="188"&gt;COSTA RICA&lt;/option&gt;&lt;option value="191"&gt;CROATIA&lt;/option&gt;&lt;option value="192"&gt;CUBA&lt;/option&gt;&lt;option value="531"&gt;CURAÇAO&lt;/option&gt;&lt;option value="208"&gt;DINAMARCA&lt;/option&gt;&lt;option value="262"&gt;DJIBOUTI&lt;/option&gt;&lt;option value="212"&gt;DOMINICA&lt;/option&gt;&lt;option value="840"&gt;E.E.U.U.&lt;/option&gt;&lt;option value="626"&gt;EAST TIMOR&lt;/option&gt;&lt;option value="218"&gt;ECUADOR&lt;/option&gt;&lt;option value="818"&gt;EGIPTO&lt;/option&gt;&lt;option value="222"&gt;EL SALVADOR&lt;/option&gt;&lt;option value="784"&gt;EMIRATOS ARABES UNIDOS&lt;/option&gt;&lt;option value="232"&gt;ERITREA&lt;/option&gt;&lt;option value="703"&gt;ESLOVAQUIA&lt;/option&gt;&lt;option value="724"&gt;ESPAÑA&lt;/option&gt;&lt;option value="233"&gt;ESTONIA&lt;/option&gt;&lt;option value="231"&gt;ETIOPIA&lt;/option&gt;&lt;option value="238"&gt;FALKLAND ISLANDS (MALVINAS)&lt;/option&gt;&lt;option value="234"&gt;FEROE, ISLAS&lt;/option&gt;&lt;option value="242"&gt;FIJI, ISLAS&lt;/option&gt;&lt;option value="608"&gt;FILIPINAS&lt;/option&gt;&lt;option value="246"&gt;FINLANDIA&lt;/option&gt;&lt;option value="249"&gt;FRANCE, METROPOLITAN&lt;/option&gt;&lt;option value="250"&gt;FRANCIA&lt;/option&gt;&lt;option value="260"&gt;FRENCH SOUTHERN TERRITORIES&lt;/option&gt;&lt;option value="266"&gt;GABON&lt;/option&gt;&lt;option value="270"&gt;GAMBIA&lt;/option&gt;&lt;option value="268"&gt;GEORGIA&lt;/option&gt;&lt;option value="288"&gt;GHANA&lt;/option&gt;&lt;option value="292"&gt;GIBRALTAR&lt;/option&gt;&lt;option value="300"&gt;GRECIA&lt;/option&gt;&lt;option value="308"&gt;GRENADA&lt;/option&gt;&lt;option value="304"&gt;GROENLANDIA&lt;/option&gt;&lt;option value="312"&gt;GUADALUPE&lt;/option&gt;&lt;option value="316"&gt;GUAM&lt;/option&gt;&lt;option value="320"&gt;GUATEMALA&lt;/option&gt;&lt;option value="254"&gt;GUAYANA FRANCESA&lt;/option&gt;&lt;option value="831"&gt;GUERNSEY&lt;/option&gt;&lt;option value="324"&gt;GUINEA&lt;/option&gt;&lt;option value="624"&gt;GUINEA BISSAU&lt;/option&gt;&lt;option value="226"&gt;GUINEA ECUATORIAL&lt;/option&gt;&lt;option value="328"&gt;GUYANA&lt;/option&gt;&lt;option value="332"&gt;HAITI&lt;/option&gt;&lt;option value="334"&gt;HEARD AND MC DONALD ISLANDS&lt;/option&gt;&lt;option value="528"&gt;HOLANDA (PAISES BAJOS)&lt;/option&gt;&lt;option value="340"&gt;HONDURAS&lt;/option&gt;&lt;option value="344"&gt;HONG KONG&lt;/option&gt;&lt;option value="348"&gt;HUNGRIA&lt;/option&gt;&lt;option value="356"&gt;INDIA&lt;/option&gt;&lt;option value="360"&gt;INDONESIA&lt;/option&gt;&lt;option value="368"&gt;IRAK&lt;/option&gt;&lt;option value="364"&gt;IRAN&lt;/option&gt;&lt;option value="372"&gt;IRLANDA (EIRE)&lt;/option&gt;&lt;option value="833"&gt;ISLA DE MAN&lt;/option&gt;&lt;option value="352"&gt;ISLANDIA&lt;/option&gt;&lt;option value="376"&gt;ISRAEL&lt;/option&gt;&lt;option value="380"&gt;ITALIA&lt;/option&gt;&lt;option value="388"&gt;JAMAICA&lt;/option&gt;&lt;option value="392"&gt;JAPON&lt;/option&gt;&lt;option value="832"&gt;JERSEY&lt;/option&gt;&lt;option value="400"&gt;JORDANIA&lt;/option&gt;&lt;option value="398"&gt;KAZAJSTAN&lt;/option&gt;&lt;option value="404"&gt;KENIA&lt;/option&gt;&lt;option value="296"&gt;KIRIBATI&lt;/option&gt;&lt;option value="414"&gt;KUWAIT&lt;/option&gt;&lt;option value="417"&gt;KYRGYSTAN&lt;/option&gt;&lt;option value="418"&gt;LAOS&lt;/option&gt;&lt;option value="428"&gt;LATVIA&lt;/option&gt;&lt;option value="426"&gt;LESOTHO&lt;/option&gt;&lt;option value="422"&gt;LIBANO&lt;/option&gt;&lt;option value="430"&gt;LIBERIA&lt;/option&gt;&lt;option value="434"&gt;LIBIA&lt;/option&gt;&lt;option value="438"&gt;LIECHTENSTEIN&lt;/option&gt;&lt;option value="440"&gt;LITUANIA&lt;/option&gt;&lt;option value="442"&gt;LUXEMBOURG&lt;/option&gt;&lt;option value="446"&gt;MACAO&lt;/option&gt;&lt;option value="807"&gt;Macedonia&lt;/option&gt;&lt;option value="450"&gt;MADAGASCAR&lt;/option&gt;&lt;option value="458"&gt;MALASIA&lt;/option&gt;&lt;option value="454"&gt;MALAWI&lt;/option&gt;&lt;option value="462"&gt;MALDIVAS, ISLAS&lt;/option&gt;&lt;option value="466"&gt;MALI&lt;/option&gt;&lt;option value="470"&gt;MALTA&lt;/option&gt;&lt;option value="504"&gt;MARRUECOS&lt;/option&gt;&lt;option value="584"&gt;MARSHALL ISLANDS&lt;/option&gt;&lt;option value="474"&gt;MARTINICA&lt;/option&gt;&lt;option value="480"&gt;MAURICIO&lt;/option&gt;&lt;option value="478"&gt;MAURITANIA&lt;/option&gt;&lt;option value="175"&gt;MAYOTTE&lt;/option&gt;&lt;option value="484"&gt;MEXICO&lt;/option&gt;&lt;option value="583"&gt;MICRONESIA&lt;/option&gt;&lt;option value="498"&gt;MOLDOVA&lt;/option&gt;&lt;option value="492"&gt;MONACO&lt;/option&gt;&lt;option value="496"&gt;MONGOLIA&lt;/option&gt;&lt;option value="500"&gt;MONSERRAT, ISLA&lt;/option&gt;&lt;option value="499"&gt;MONTENEGRO&lt;/option&gt;&lt;option value="508"&gt;MOZAMBIQUE&lt;/option&gt;&lt;option value="104"&gt;MYANMAR&lt;/option&gt;&lt;option value="516"&gt;NAMIBIA&lt;/option&gt;&lt;option value="520"&gt;NAURU&lt;/option&gt;&lt;option value="524"&gt;NEPAL&lt;/option&gt;&lt;option value="536"&gt;NEUTRAL ZONE&lt;/option&gt;&lt;option value="558"&gt;NICARAGUA&lt;/option&gt;&lt;option value="562"&gt;NIGER&lt;/option&gt;&lt;option value="566"&gt;NIGERIA&lt;/option&gt;&lt;option value="570"&gt;NIUE&lt;/option&gt;&lt;option value="574"&gt;NORFOLK, ISLAS&lt;/option&gt;&lt;option value="580"&gt;NORTHERN MARIANA ISLANDS&lt;/option&gt;&lt;option value="578"&gt;NORUEGA&lt;/option&gt;&lt;option value="540"&gt;NUEVA CALEDONIA&lt;/option&gt;&lt;option value="554"&gt;NUEVA ZELANDIA&lt;/option&gt;&lt;option value="512"&gt;OMAN&lt;/option&gt;&lt;option value="586"&gt;PAKISTAN&lt;/option&gt;&lt;option value="585"&gt;PALAU&lt;/option&gt;&lt;option value="275"&gt;PALESTINE, STATE OF&lt;/option&gt;&lt;option value="591"&gt;PANAMA&lt;/option&gt;&lt;option value="598"&gt;PAPUA NUEVA GUINEA&lt;/option&gt;&lt;option value="600"&gt;PARAGUAY&lt;/option&gt;&lt;option value="604"&gt;PERU&lt;/option&gt;&lt;option value="612"&gt;PITCAIRN, ISLA&lt;/option&gt;&lt;option value="258"&gt;POLINESIA FRANCESA&lt;/option&gt;&lt;option value="616"&gt;POLONIA&lt;/option&gt;&lt;option value="620"&gt;PORTUGAL&lt;/option&gt;&lt;option value="630"&gt;PUERTO RICO&lt;/option&gt;&lt;option value="634"&gt;QATAR&lt;/option&gt;&lt;option value="826"&gt;REINO UNIDO&lt;/option&gt;&lt;option value="203"&gt;REP. CHECA&lt;/option&gt;&lt;option value="214"&gt;REP. DOMINICANA&lt;/option&gt;&lt;option value="638"&gt;REUNION&lt;/option&gt;&lt;option value="642"&gt;RUMANIA&lt;/option&gt;&lt;option value="643"&gt;RUSIA (FEDERACION RUSA)&lt;/option&gt;&lt;option value="646"&gt;RWANDA&lt;/option&gt;&lt;option value="732"&gt;SAHARA OCCIDENTAL&lt;/option&gt;&lt;option value="652"&gt;SAINT BARTHÉLEMY&lt;/option&gt;&lt;option value="659"&gt;SAINT KITTS AND NEVIS&lt;/option&gt;&lt;option value="663"&gt;SAINT MARTIN (FRENCH PART)&lt;/option&gt;&lt;option value="090"&gt;SALOMON, ISLAS&lt;/option&gt;&lt;option value="882"&gt;SAMOA&lt;/option&gt;&lt;option value="674"&gt;SAN MARINO&lt;/option&gt;&lt;option value="666"&gt;SAN PEDRO Y MIQUELON&lt;/option&gt;&lt;option value="670"&gt;SAN VICENTE Y LAS GRANADINAS&lt;/option&gt;&lt;option value="654"&gt;SANTA HELENA&lt;/option&gt;&lt;option value="662"&gt;SANTA LUCIA&lt;/option&gt;&lt;option value="336"&gt;SANTA SEDE&lt;/option&gt;&lt;option value="678"&gt;SANTO TOME Y PRINCIPE&lt;/option&gt;&lt;option value="686"&gt;SENEGAL&lt;/option&gt;&lt;option value="688"&gt;SERBIA&lt;/option&gt;&lt;option value="891"&gt;SERBIA Y MONTENEGRO&lt;/option&gt;&lt;option value="690"&gt;SEYCHELLES&lt;/option&gt;&lt;option value="694"&gt;SIERRA LEONA&lt;/option&gt;&lt;option value="702"&gt;SINGAPUR&lt;/option&gt;&lt;option value="534"&gt;SINT MAARTEN (DUTCH PART)&lt;/option&gt;&lt;option value="760"&gt;SIRIA&lt;/option&gt;&lt;option value="705"&gt;SLOVENIA&lt;/option&gt;&lt;option value="706"&gt;SOMALIA&lt;/option&gt;&lt;option value="239"&gt;SOUTH GEORGIA AND THE SOUTH SANDWICH ISL&lt;/option&gt;&lt;option value="144"&gt;SRI LANKA&lt;/option&gt;&lt;option value="710"&gt;SUDAFRICA&lt;/option&gt;&lt;option value="736"&gt;SUDAN&lt;/option&gt;&lt;option value="729"&gt;SUDAN&lt;/option&gt;&lt;option value="728"&gt;SUDAN DEL SUR&lt;/option&gt;&lt;option value="752"&gt;SUECIA&lt;/option&gt;&lt;option value="756"&gt;SUIZA&lt;/option&gt;&lt;option value="740"&gt;SURINAME&lt;/option&gt;&lt;option value="744"&gt;SVALBARD AND JAN MAYEN ISLANDS&lt;/option&gt;&lt;option value="748"&gt;SWASILANDIA&lt;/option&gt;&lt;option value="764"&gt;TAILANDIA&lt;/option&gt;&lt;option value="158"&gt;TAIWAN, PROVINCE OF CHINA&lt;/option&gt;&lt;option value="762"&gt;TAJIKISTAN&lt;/option&gt;&lt;option value="834"&gt;TANZANIA&lt;/option&gt;&lt;option value="768"&gt;TOGO&lt;/option&gt;&lt;option value="772"&gt;TOKELAU&lt;/option&gt;&lt;option value="776"&gt;TONGA&lt;/option&gt;&lt;option value="780"&gt;TRINIDAD Y TOBAGO&lt;/option&gt;&lt;option value="788"&gt;TUNEZ&lt;/option&gt;&lt;option value="796"&gt;TURCAS Y CAICOS, ISLAS&lt;/option&gt;&lt;option value="795"&gt;TURKMENISTAN&lt;/option&gt;&lt;option value="792"&gt;TURQUIA&lt;/option&gt;&lt;option value="798"&gt;TUVALU&lt;/option&gt;&lt;option value="800"&gt;UGANDA&lt;/option&gt;&lt;option value="804"&gt;UKRAINE&lt;/option&gt;&lt;option value="581"&gt;UNITED STATES MINOR OUTLYING ISLANDS&lt;/option&gt;&lt;option value="858" selected&gt;URUGUAY&lt;/option&gt;&lt;option value="860"&gt;UZBEKISTAN&lt;/option&gt;&lt;option value="548"&gt;VANUATU&lt;/option&gt;&lt;option value="862"&gt;VENEZUELA&lt;/option&gt;&lt;option value="704"&gt;VIETNAM&lt;/option&gt;&lt;option value="092"&gt;VIRGENES, ISLAS BRITANICAS&lt;/option&gt;&lt;option value="850"&gt;VIRGENES, ISLAS NORTEAMERICAN.&lt;/option&gt;&lt;option value="876"&gt;WALLIS Y FUTUNA, ISLAS&lt;/option&gt;&lt;option value="887"&gt;YEMEN&lt;/option&gt;&lt;option value="898"&gt;Z. FRANCAS DE ARGENTINA 0200&lt;/option&gt;&lt;option value="899"&gt;Z. FRANCAS DE BRASIL 0200&lt;/option&gt;&lt;option value="180"&gt;ZAIRE&lt;/option&gt;&lt;option value="894"&gt;ZAMBIA&lt;/option&gt;&lt;option value="716"&gt;ZIMBABWE&lt;/option&gt;&lt;option value="895"&gt;ZONA DEL CANAL DE PANAMA&lt;/option&gt;&lt;option value="897"&gt;ZONA NEUTRAL (PALESTINA)&lt;/option&gt;&lt;/select&gt; &lt;script type="text/javascript"&gt;gx.dom.setAttribute("W0018vPAIS","gxoch0","if(gx.evt.jsEvent(this)) {gx.evt.execEvt('W0018EVPAIS.CLICK.',this);} else return false;");&lt;/script&gt;&lt;br&gt;&lt;select id="W0018vTIPODOC" name="W0018vTIPODOC" class="form-control" style=";width: 60chr" onfocus="gx.evt.onfocus(this, 10,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(10);" gxoch0="if(!(gx.evt.jsEvent(this))) return false;"&gt; &lt;option value="DNI" selected&gt;Cédula de Identidad&lt;/option&gt;&lt;option value="PSP"&gt;Pasaporte&lt;/option&gt;&lt;/select&gt; &lt;script type="text/javascript"&gt;gx.dom.setAttribute("W0018vTIPODOC","gxoch0","if(!(gx.evt.jsEvent(this))) return false;");&lt;/script&gt;&lt;br&gt;&lt;input type="text" id="W0018vDOCUMENTO" name="W0018vDOCUMENTO" value="" size="60" placeholder="Nro. de documento" spellcheck="true" maxlength="60" class="form-control" style=";height: 1row;text-align:left" onfocus="gx.evt.onfocus(this, 11,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(11);"&gt;&lt;br&gt;&lt;input type="password" id="W0018vUSERPASSWORD" name="W0018vUSERPASSWORD" value="" size="50" placeholder="Contraseña" spellcheck="false" maxlength="50" class="form-control" style=";height: 1row;text-align:left" onfocus="gx.evt.onfocus(this, 12,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(12);"&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;<br/>
+                       &lt;table id="W0018TABLECAPTCHA" class="Table" data-cellpadding="0" data-cellspacing="0" style="margin-left:auto; margin-right: auto;display:none; width: 210px;" cellpadding="0" cellspacing="0"&gt;<br/>
+                        &lt;tbody&gt;<br/>
+                         &lt;tr&gt;<br/>
+                          &lt;td data-align="center" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"&gt;<br/>
+                           &lt;div class="TextBlock" style=";display:inline;" id="W0018TEXTBLOCKCAPTCHAIMAGE" gxformat="1"&gt;<br/>
+                            TextBlockCaptchaImage<br/>
+                           &lt;/div&gt;&lt;script type="text/javascript"&gt;gx.dom.setAttribute("W0018TEXTBLOCKCAPTCHAIMAGE","gxformat","1");&lt;/script&gt;&lt;span style="font-family:'Microsoft Sans Serif'; font-size:10.0pt; font-weight:normal; font-style:normal;" id="W0018CAPTCHALABEL"&gt;Ingrese el texto de la imagen&lt;/span&gt;&lt;input type="text" id="W0018vCAPTCHATEXT" name="W0018vCAPTCHATEXT" value="" title="Ingrese el texto de la imagen" placeholder="Ingrese el texto de la imagen" spellcheck="false" maxlength="40" class="form-control" style=";width: 210px;;height: 1row;text-align:left" onfocus="gx.evt.onfocus(this, 18,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(18);"&gt;&lt;/td&gt;<br/>
+                         &lt;/tr&gt;<br/>
+                        &lt;/tbody&gt;<br/>
+                       &lt;/table&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;input type="button" name="W0018LOGINBUTTON" value="Entrar" title="Entrar" class="log-btn" onclick="if( gx.evt.jsEvent(this)) {gx.evt.execEvt('W0018EENTER.',this);} else return false;" onfocus="gx.evt.onfocus(this, 19,'W0018',false,'',0)"&gt;&lt;/p&gt;&lt;p&gt;&lt;input type="button" name="W0018SSOBUTTON" value="Iniciar sesión con ID Uruguay" title="Iniciar sesión con ID Uruguay" class="id-log-btn" onclick="if( gx.evt.jsEvent(this)) {gx.evt.execEvt('W0018E\'SSO\'.',this);} else return false;" onfocus="gx.evt.onfocus(this, 20,'W0018',false,'',0)"&gt;&lt;/p&gt;&lt;/td&gt;<br/>
+                     &lt;/tr&gt;<br/>
+                     &lt;tr&gt;<br/>
+                      &lt;td&gt;<br/>
+                       &lt;table id="W0018TABLE2" class="Table" data-cellpadding="1" data-cellspacing="2" style="margin-left:auto;" cellpadding="1" cellspacing="2"&gt;<br/>
+                        &lt;tbody&gt;<br/>
+                         &lt;tr&gt;<br/>
+                          &lt;td&gt;&lt;span class="link" style="font-family:'Arial'; font-size:8.0pt; font-weight:normal; font-style:normal; color:#155196;" id="W0018REGISTROPREVIO"&gt;&lt;a href="javascript:gx.evt.execEvt('W0018E\'REGISTROPREVIO\'.',this);"&gt;Solicitar Registro de Usuario&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;<br/>
+                          &lt;td style="width:20px"&gt;&lt;/td&gt;<br/>
+                         &lt;/tr&gt;<br/>
+                         &lt;tr&gt;<br/>
+                          &lt;td style="height:16px"&gt;&lt;span class="link" style="font-family:'Arial'; font-size:8.0pt; font-weight:normal; font-style:normal; color:#155196;" id="W0018REGISTROEMPRESA"&gt;&lt;a href="javascript:gx.evt.execEvt('W0018E\'REGISTROEMPRESA\'.',this);"&gt;Solicitar Registro de Empresa&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;<br/>
+                          &lt;td&gt;&lt;/td&gt;<br/>
+                         &lt;/tr&gt;<br/>
+                         &lt;tr&gt;<br/>
+                          &lt;td style="height:16px"&gt;&lt;span class="link" style="font-family:'Arial'; font-size:8.0pt; font-weight:normal; font-style:normal; color:#155196;" id="W0018CAMBIOPWD"&gt;&lt;a href="vucecambiopwdini"&gt;Recuperar contraseña&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;<br/>
+                          &lt;td&gt;&lt;/td&gt;<br/>
+                         &lt;/tr&gt;<br/>
+                         &lt;tr&gt;<br/>
+                          &lt;td&gt;&lt;span class="link" style="font-family:'Arial'; font-size:8.0pt; font-weight:normal; font-style:normal; color:#155196;" id="W0018LINKINFOSSO"&gt;&lt;a href="https://mi.iduruguay.gub.uy/" target="_blank"&gt;¿Qué es ID Uruguay?&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;<br/>
+                          &lt;td&gt;&lt;/td&gt;<br/>
+                         &lt;/tr&gt;<br/>
+                        &lt;/tbody&gt;<br/>
+                       &lt;/table&gt;&lt;textarea spellcheck="false" cols="80" rows="10" name="W0018vURL" id="W0018vURL" onfocus="gx.evt.onfocus(this, 40,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(40);" class="Attribute" style=";display:none;" onkeydown="return gx.evt.checkMaxLength(this,2048,event);" onkeyup="return gx.evt.checkMaxLength(this,2048,event);" maxlength="2048"&gt;&lt;/textarea&gt; &lt;script type="text/javascript"&gt;gx.dom.setAttribute("W0018vURL","maxlength","2048");&lt;/script&gt;&lt;textarea spellcheck="true" cols="80" rows="10" name="W0018vWEBPANEL" id="W0018vWEBPANEL" onfocus="gx.evt.onfocus(this, 41,'W0018',false,'',0)" onchange="gx.evt.onchange(this)" onblur=";gx.evt.onblur(41);" class="Attribute" style=";display:none;" onkeydown="return gx.evt.checkMaxLength(this,2097152,event);" onkeyup="return gx.evt.checkMaxLength(this,2097152,event);" maxlength="2097152"&gt;&lt;/textarea&gt; &lt;script type="text/javascript"&gt;gx.dom.setAttribute("W0018vWEBPANEL","maxlength","2097152");&lt;/script&gt;&lt;/td&gt;<br/>
+                     &lt;/tr&gt;<br/>
+                     &lt;tr&gt;<br/>
+                      &lt;td data-align="center" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"&gt;&lt;/td&gt;<br/>
+                     &lt;/tr&gt;<br/>
+                    &lt;/tbody&gt;<br/>
+                   &lt;/table&gt;<br/>
+                  &lt;/div&gt;&lt;/td&gt;<br/>
+                &lt;/tr&gt;<br/>
+               &lt;/tbody&gt;<br/>
+              &lt;/table&gt;<br/>
+              &lt;table id="W0018TABLEREST" class="Table" data-cellpadding="1" data-cellspacing="2" style="margin-left:auto; margin-right: auto;" cellpadding="1" cellspacing="2"&gt;<br/>
+               &lt;tbody&gt;<br/>
+                &lt;tr&gt;<br/>
+                 &lt;td&gt;<br/>
+                  &lt;div class="gxwebcomponent" id="W0018gxHTMLWrpW0048"&gt;&lt;/div&gt;&lt;/td&gt;<br/>
+                &lt;/tr&gt;<br/>
+               &lt;/tbody&gt;<br/>
+              &lt;/table&gt;<br/>
+              &lt;p align="center"&gt;&lt;span class="Text" id="W0018TEXTBLOCKDISCL"&gt;&lt;/span&gt;&lt;/p&gt;<br/>
+              &lt;div class="TextBlock" style=";display:inline;" id="W0018ALERTAS" gxformat="1"&gt;&lt;/div&gt;<br/>
+              &lt;script type="text/javascript"&gt;gx.dom.setAttribute("W0018ALERTAS","gxformat","1");&lt;/script&gt;<br/>
+             &lt;/div&gt;<br/>
+            &lt;/div&gt;<br/>
+           &lt;/div&gt;&lt;/td&gt;<br/>
+         &lt;/tr&gt;<br/>
+         &lt;tr&gt;<br/>
+          &lt;td&gt;&lt;/td&gt;<br/>
+         &lt;/tr&gt;<br/>
+         &lt;tr&gt;<br/>
+          &lt;td data-align="center" style="text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center"&gt;Versión - v2.86.00 06/06/2023 10:13 &lt;p&gt;&lt;font size="5" color="red"&gt;&lt;strong&gt;Base de datos PRE GEO&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;&lt;/td&gt;<br/>
+         &lt;/tr&gt;<br/>
+        &lt;/tbody&gt;<br/>
+       &lt;/table&gt;<br/>
+       &lt;p&gt;&lt;/p&gt;<br/>
+       &lt;p&gt;&lt;/p&gt;<br/>
+       &lt;table id="TABLEREST" class="Table" data-cellpadding="1" data-cellspacing="2" style="margin-left:auto; margin-right: auto;" cellpadding="1" cellspacing="2"&gt;<br/>
+        &lt;tbody&gt;<br/>
+         &lt;tr&gt;<br/>
+          &lt;td&gt;<br/>
+           &lt;div class="gxwebcomponent" id="gxHTMLWrpW0031"&gt;&lt;/div&gt;&lt;/td&gt;<br/>
+         &lt;/tr&gt;<br/>
+        &lt;/tbody&gt;<br/>
+       &lt;/table&gt;<br/>
+       &lt;p&gt;&lt;/p&gt;<br/>
+       &lt;p align="center"&gt;&lt;span class="Text" id="TEXTBLOCKDISCL"&gt;&lt;/span&gt;&lt;/p&gt;<br/>
+       &lt;p&gt;&lt;/p&gt;<br/>
+      &lt;/div&gt;<br/>
+     &lt;/div&gt;<br/>
+    &lt;/div&gt;<br/>
+   &lt;/div&gt;<br/>
+   &lt;div class="TextBlock" style=";display:inline;" id="ALERTAS" gxformat="1"&gt;&lt;/div&gt;<br/>
+   &lt;script type="text/javascript"&gt;gx.dom.setAttribute("ALERTAS","gxformat","1");&lt;/script&gt;&lt;img src="" id="vEVTCREARWC" alt=" " class="Image" style=";display:none;" usemap="''"&gt;<br/>
+   &lt;p&gt;&lt;/p&gt;<br/>
+   &lt;div&gt;<br/>
+    &lt;input type="hidden" name="GXState" value="{&quot;_EventName&quot;:&quot;&quot;,&quot;_EventGridId&quot;:&quot;&quot;,&quot;_EventRowId&quot;:&quot;&quot;,&quot;W0018_CMPPGM&quot;:&quot;wcloginvuce&quot;,&quot;W0018W0048&quot;:&quot;&quot;,&quot;W0018GX_FocusControl&quot;:&quot;W0018vPAIS&quot;,&quot;W0031&quot;:&quot;&quot;,&quot;vEVTCREARWC&quot;:&quot;&quot;,&quot;FORM_Headerrawhtml&quot;:&quot;&lt;script&gt;$(document).ready(function () {\r\nvar urlref = \&quot;https://test-eid.portal.gub.uy/v1.1/idp/profile/SAML2/Redirect/SSO\&quot;;\r\nif(document.referrer == urlref){\r\n\t\t\turl = \&quot;loginvuce\&quot;;\r\n\t\t\twindow.top.location.href =  url;}\r\n});\r\n&lt;\/script&gt;\r\n&lt;link href=\&quot;../static/external/css/alertify.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;link href=\&quot;../static/external/css/alertify_default.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;script&gt;\r\n if(!alertify.SoloAceptar){\r\n  alertify.dialog('SoloAceptar',function factory(){\r\n   return{\r\n    main:function(message){\r\n     this.message = message;\r\n    },\r\n    setup:function(){\r\n     return {\r\n      buttons:[{text: \&quot;Aceptar\&quot;, key:27/*Esc*/}],\r\n      focus: { element:0 }\r\n     };\r\n    },\r\n    prepare:function(){\r\n     this.setContent(this.message);\r\n    }\r\n   }\r\n  });\r\n }\r\n&lt;\/script&gt;&lt;link id=\&quot;gxtheme_css_reference\&quot; rel=\&quot;stylesheet\&quot; type=\&quot;text/css\&quot; href=\&quot;../static/Resources/Spanish/AVUCE.css\&quot;&gt;\r\n&lt;link href=\&quot;../static/external/css/bootstrap.min.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;link href=\&quot;../static/external/css/icon-vuce.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;link href=\&quot;../static/external/css/fileinput.min.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;link href=\&quot;../static/external/css/datepicker.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;link href=\&quot;../static/external/css/bootstrap-vuce_LOGIN.css\&quot; rel=\&quot;stylesheet\&quot; /&gt;\r\n&lt;link rel=\&quot;apple-touch-icon-precomposed\&quot; href=\&quot;../static/external/apple-touch-icon-precomposed.png\&quot; /&gt;\r\n&lt;link rel=\&quot;apple-touch-icon-precomposed\&quot; sizes=\&quot;76x76\&quot; href=\&quot;../static/external/apple-touch-icon-precomposed-76x76.png\&quot; /&gt;\r\n&lt;link rel=\&quot;apple-touch-icon-precomposed\&quot; sizes=\&quot;120x120\&quot; href=\&quot;../static/external/apple-touch-icon-precomposed-120x120.png\&quot; /&gt;\r\n&lt;link rel=\&quot;apple-touch-icon-precomposed\&quot; sizes=\&quot;152x152\&quot; href=\&quot;../static/external/apple-touch-icon-precomposed-152x152.png\&quot; /&gt;\r\n&lt;link rel=\&quot;icon\&quot; sizes=\&quot;196x196\&quot; href=\&quot;../static/external/icon-precomposed-196x196.png\&quot; /&gt;\r\n&lt;link rel=\&quot;icon\&quot; sizes=\&quot;196x196\&quot; href=\&quot;../static/external/icon-precomposed-128x128.png\&quot; /&gt;\r\n&lt;link rel=\&quot;shortcut icon\&quot; href=\&quot;/VUCE/static/Resources/favicon.png\&quot; / &gt;\r\n&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0\&quot;&gt;\r\n&lt;style&gt;\r\n.iframeclass{\r\nwidth:50px !important;\r\n}\r\n.alertify .ajs-dialog {\r\n\tmax-width: 600px;\r\n}\r\n@font-face {\r\n  font-family: 'Avenir-Roman';\r\n  src: url('fonts/Avenir-Roman.eot?#iefix') format('embedded-opentype'), url('fonts/Avenir-Roman.woff') format('woff'), url('fonts/Avenir-Roman.ttf') format('truetype'), url('fonts/Avenir-Roman.svg#Avenir-Roman') format('svg');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\nhtml { \r\n\tbackground: url(\&quot;../static/external/img/back1.jpg\&quot;) no-repeat center center fixed; \r\n\t-webkit-background-size: cover;\r\n\t-moz-background-size: cover;\r\n\t-o-background-size: cover;\r\n\tbackground-size: cover;\r\n}\r\n.form-control {\r\n\twidth: 90%;\r\n\theight: 31px;\r\n\tpadding: 5px 7px 5px 15px;\r\n\tbackground: #fff;\r\n\tcolor: #666;\r\n\tborder: 1px solid transparent;\r\n\t-moz-border-radius: 4px;\r\n\t-webkit-border-radius: 4px;\r\n\tborder-radius: 0px;\r\n}\r\n.log-btn {\r\n  background: #0AC986;\r\n  display: inline-block;\r\n  width: 90%;\r\n  font-size: 16px;\r\n  font-weight: normal;\r\n  height: 50px;\r\n  color: #fff;\r\n  text-decoration: none;\r\n  border: none;\r\n  -moz-border-radius: 4px;\r\n  -webkit-border-radius: 4px;\r\n  border-radius: 4px;\r\n}\r\n.log-btn:hover {\r\n  background: #119869;\r\n}\r\n.id-log-btn {\r\n  background: rgb(0, 105, 217);\r\n  display: inline-block;\r\n  width: 90%;\r\n  font-size: 16px;\r\n  font-weight: normal;\r\n  height: 50px;\r\n  color: #fff;\r\n  text-decoration: none;\r\n  border: none;\r\n  -moz-border-radius: 4px;\r\n  -webkit-border-radius: 4px;\r\n  border-radius: 4px;\r\n}\r\n.id-log-btn:hover {\r\n  background: #1158a5;\r\n}\r\n.login-form {\r\n\twidth: 450px;\r\n\tbackground: #D1D1D1;\r\n\t-moz-border-radius: 4px;\r\n\t-webkit-border-radius: 4px;\r\n\tborder-radius: 4px;\r\n\tmargin: auto;\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\tright: 0;\r\n\ttop: 50%;\r\n\t-moz-transform: translateY(-50%);\r\n\t-ms-transform: translateY(-50%);\r\n\t-webkit-transform: translateY(-50%);\r\n\ttransform: translateY(-50%);\r\n}\r\n.link {\r\n\tdisplay: inline-block;\r\n\ttext-decoration: none;\r\n\tcolor: #C6C6C6;\r\n\tfloat: right;\r\n\tfont-size: 12px;\r\n\tmargin-bottom: 15px;\r\n}\r\n.link:hover {\r\n\ttext-decoration: underline;\r\n\tcolor: #8C918F;\r\n}\r\n.link:visited {\r\n\tcolor: #8C918F !important;\r\n}\r\n&lt;\/style&gt;\r\n&quot;,&quot;GX_FocusControl&quot;:&quot;&quot;,&quot;GX_AJAX_KEY&quot;:&quot;FF56FF5FFF5EFF40FFFFFF3DFF5237FF&quot;,&quot;AJAX_SECURITY_TOKEN&quot;:&quot;d6346f28f7bfc651e1f9a1993af13bffbae60d7be7e381b45ff5c889f266af53&quot;,&quot;GX_CMP_OBJS&quot;:{&quot;W0018&quot;:&quot;wcloginvuce&quot;},&quot;sCallerURL&quot;:&quot;/VUCE/servlet/loginvuce&quot;,&quot;GX_CLI_NAV&quot;:&quot;true&quot;,&quot;GX_RES_PROVIDER&quot;:&quot;com.genexus.webpanels.GXResourceProvider&quot;,&quot;GX_THEME&quot;:&quot;AVUCE&quot;}" autocomplete="off"&gt;<br/>
+   &lt;/div&gt;<br/>
+  &lt;/form&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/messages.spa.js?90830"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/loginvuce.js?202321414454910"&gt;&lt;/script&gt;<br/>
+  &lt;script type="text/javascript" src="/VUCE/static/wcloginvuce.js?20232141445260"&gt;&lt;/script&gt;<br/>
+  &lt;div style="display: none;"&gt;&lt;/div&gt;<br/>
+  &lt;div id="gx_ajax_notification" style="display:none;position:absolute;text-align:center;vertical-align:top;top:0px;left:0px;"&gt;<br/>
+   &lt;div style="background-color:#BEBEBE;filter:alpha(opacity=50);opacity:0.5;position:absolute;top:0px;left:0px;width:100%;height:100%;"&gt;&lt;/div&gt;&lt;img id="gx_ajax_indicator" src="https://prewildfly.vuce.gub.uy/VUCE/static/Resources/indicator.gif" width="16px" height="16px" align="absmiddle"&gt;<br/>
+  &lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>
